@@ -17,9 +17,13 @@
         <h5 class="my-0 mr-md-auto font-weight-normal"> Electronic Review App </h5>
 
         <nav class="my-2 my-md-0 mr-md-3">
-          <%= link_to "Home", '#' %>
-          <%= link_to "About Us", '#' %>
-          <%= link_to "Contact Us", '#' %>
+          <%= link_to "Home", root_path %>
+          <%= link_to "About Us", static_pages_about_path %>
+          <%= link_to "Contact Us", static_pages_contact_path %>
+          <%= link_to "Products", products_index_path %>
+          <%= link_to "Login", '#' %>
+          <%= link_to "Register", profiles_new_path %>
+          <%= link_to "My Profile", '#' %>
        </nav>
       </div>
     </div>
