@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'profiles/show'
+  get 'profiles/new'
+  get 'profiles/create'
+  get 'profile/show'
+  get 'profile/new'
+  get 'profile/create'
   get 'products/new'
   get 'products/index'
   get 'products/show'
@@ -8,5 +14,6 @@ Rails.application.routes.draw do
   get 'static_pages/about'
   get 'static_pages/contact'
   resources :products
+  resources :profiles
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
