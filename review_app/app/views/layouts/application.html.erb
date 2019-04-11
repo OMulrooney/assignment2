@@ -21,13 +21,29 @@
           <%= link_to "About Us", static_pages_about_path %>
           <%= link_to "Contact Us", static_pages_contact_path %>
           <%= link_to "Products", products_index_path %>
-          <%= link_to "Login", '#' %>
-          <%= link_to "Register", profiles_new_path %>
+          
           <%= link_to "My Profile", '#' %>
+          <% if current_user %>
+            <a class="p-2 text-dark" href="#">
+              <%= link_to 'Log Out', session_path('active'), method: :delete %>
+            </a>
+            <a class="p-2 text-dark" href='#'>
+              <%= current_user.userid %>
+            </a>
+          <% else %>
+            <a class="p-2 text-dark" href="#">
+              <%= link_to 'Log In', new_session_path, class: "active-nav-link" %>
+            </a>
+            <a class="p-2 text-dark" href="#">
+              <%= link_to "Register", new_user_path, class: "active-nav-link" %>
+            </a>
+          <% end %>
        </nav>
       </div>
     </div>
     <div class="container">
+      <% if notice %> <%= notice %> <%end%>
+      <% if alert %> <<%= alert %> <%end%>
       <%= yield %>
     </div>
   </body>
