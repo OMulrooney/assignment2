@@ -22,13 +22,13 @@
           <%= link_to "Contact Us", static_pages_contact_path %>
           <%= link_to "Products", products_index_path %>
           
-          <%= link_to "My Profile", '#' %>
+          
           <% if current_user %>
             <a class="p-2 text-dark" href="#">
               <%= link_to 'Log Out', session_path('active'), method: :delete %>
             </a>
             <a class="p-2 text-dark" href='#'>
-              <%= current_user.userid %>
+              <%= link_to current_user.userid, profiles_show_path(:id => current_user.id) %>
             </a>
           <% else %>
             <a class="p-2 text-dark" href="#">
