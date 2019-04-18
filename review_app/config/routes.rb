@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'review/show'
+  get 'review/index'
+  get 'review/create'
+  get 'review/new'
   get 'sessions/index'
   # get 'sessions/new'
   resources :sessions

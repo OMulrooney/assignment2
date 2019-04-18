@@ -6,5 +6,5 @@
 	<p> Category: <%= @product.category%> </p>
 	<p> Release Date: <%= @product.releaseDate%> </p>
 	<p> Description: <%= @product.description%> </p>
-	<p> Image <%= @product.productImage%> </p>
+	<p> Image <%= image_tag(@product.productImage.url, alt: 'Image') if @product.productImage? %> </p>
 </div>

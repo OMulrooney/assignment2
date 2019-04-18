@@ -1,0 +1,21 @@
+<div class="container">
+	<h2>Reviews For PRODUCTNAME</h2>
+	<table border="1" class="table">
+		<tr>
+			<th> Rating </th>
+			<th> Review Text</th>
+			<th> Date Posted </th>
+			<th> Author </th>
+			<th> View Review </th>
+		</tr>
+		<% @reviews.each do |review| %>
+			<tr>
+				<td> <%= review.rating %> </td>
+				<td> <%= review.reviewText %> </td>
+				<td> <%= review.datePosted %> </td>
+				<td> <%= review.author %> </td>
+				<td> <%= link_to 'Review Page', review_path(review) %> </td>
+			</tr>
+		<% end %>
+	</table>
+</div>

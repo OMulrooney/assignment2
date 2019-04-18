@@ -1,7 +1,7 @@
 <div class="container">
 	<h2>Products</h2>
 	<%= link_to 'Add New Product', products_new_path %>
-	<table border="1" class="table">
+	<table border="1" class="table products-table">
 		<tr>
 			<th> Product Name </th>
 			<th> Brand</th>
@@ -20,7 +20,7 @@
 				<td> <%= product.category %> </td>
 				<td> <%= product.releaseDate %> </td>
 				<td> <%= product.description %> </td>
-				<td> <%= product.productImage %> </td>
+				<td> <%= image_tag(product.productImage.url, alt: 'Image') if product.productImage? %> </td>
 				<td> <%= link_to 'Product Page', product_path(product) %> </td>
 			</tr>
 		<% end %>
