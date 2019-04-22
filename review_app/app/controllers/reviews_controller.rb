@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-  	@review = Review.new(review_params)
+  	@review = Review.new(reviews_params)
     puts(@review.productId)
     @review.datePosted = Time.now
     @reviewProfile = Profile.where('userId = ' + current_user.id.to_s).first
@@ -24,8 +24,30 @@ class ReviewsController < ApplicationController
     @product=Product.new
   end
 
+   def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      redirect_to @review
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to reviews_path(:productId => @review.productId)
+  end
+
   private
   def review_params
-  	params.require(:reviews).permit(:rating, :reviewText, :datePosted, :author, :profileId, :productId)
+  	params.require(:review).permit(:rating, :reviewText, :datePosted, :author, :profileId, :productId)
+  end
+  def reviews_params
+    params.require(:reviews).permit(:rating, :reviewText, :datePosted, :author, :profileId, :productId)
   end
 end

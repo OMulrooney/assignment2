@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'reviews/index'
   get 'reviews/create'
   get 'reviews/new'
+  get 'reviews/edit'
+  get 'reviews/update'
   get 'sessions/index'
   # get 'sessions/new'
   resources :sessions

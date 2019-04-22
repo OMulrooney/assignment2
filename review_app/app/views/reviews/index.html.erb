@@ -7,7 +7,7 @@
 			<th> Date Posted </th>
 			<th> Author </th>
 			<th> Profile Picture </th>
-			<th> View Review </th>
+			<th> Actions</th>
 		</tr>
 		<% @reviews.each do |review| %>
 			<tr>
@@ -16,7 +16,11 @@
 				<td> <%= review.datePosted %> </td>
 				<td> <%= review.author %> </td>
 				<td> <img src="/uploads/profile/profilePicture/<%=review.profileId%>/<%=Profile.where(id: review.profileId).pluck(:profilePicture).first%>">
-				<td> <%= link_to 'Review Page', review_path(review) %> </td>
+				<td> 
+					<%= link_to 'View Review', review_path(review) %> | 
+					<%= link_to 'Edit', edit_review_path(review) %> | 
+					<%= link_to 'Delete', review_path(review), method: :Delete, data: {confirm: "Are you sure you want to delete this review"}%> 
+				</td>
 			</tr>
 		<% end %>
 	</table>
