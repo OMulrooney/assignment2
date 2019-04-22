@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'review/show'
-  get 'review/index'
-  get 'review/create'
-  get 'review/new'
+  get 'reviews/show'
+  get 'reviews/index'
+  get 'reviews/create'
+  get 'reviews/new'
   get 'sessions/index'
   # get 'sessions/new'
   resources :sessions
@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   get 'static_pages/contact'
   resources :products
   resources :profiles
+  resources :reviews
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

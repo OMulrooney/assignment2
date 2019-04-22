@@ -1,11 +1,12 @@
 <div class="container">
-	<h2>Reviews For PRODUCTNAME</h2>
-	<table border="1" class="table">
+	<h2>Reviews For <%= Product.where(id: params['productId']).pluck(:name).first %></h2>
+	<table border="1" class="table reviews-table">
 		<tr>
 			<th> Rating </th>
 			<th> Review Text</th>
 			<th> Date Posted </th>
 			<th> Author </th>
+			<th> Profile Picture </th>
 			<th> View Review </th>
 		</tr>
 		<% @reviews.each do |review| %>
@@ -14,6 +15,7 @@
 				<td> <%= review.reviewText %> </td>
 				<td> <%= review.datePosted %> </td>
 				<td> <%= review.author %> </td>
+				<td> <img src="/uploads/profile/profilePicture/<%=review.profileId%>/<%=Profile.where(id: review.profileId).pluck(:profilePicture).first%>">
 				<td> <%= link_to 'Review Page', review_path(review) %> </td>
 			</tr>
 		<% end %>

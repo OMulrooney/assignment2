@@ -5,5 +5,5 @@
 	<p> Address: <%= @profile.address%> </p>
 	<p> City: <%= @profile.city%> </p>
 	<p> Country: <%= @profile.country%> </p>
-	<p> Profile Picture: <%= @profile.profilePicture%> </p>
+	<p class="picture"> <%= image_tag(@profile.profilePicture.url, alt: 'Image') if @profile.profilePicture? %> </p>
 </div>

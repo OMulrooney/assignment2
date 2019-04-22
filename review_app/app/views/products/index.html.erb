@@ -10,7 +10,8 @@
 			<th> Release Date </th>
 			<th> Description </th>
 			<th> Image </th>
-			<th> Product Page </th>
+			<th> Actions </th>
+
 		</tr>
 		<% @products.each do |product| %>
 			<tr>
@@ -21,7 +22,11 @@
 				<td> <%= product.releaseDate %> </td>
 				<td> <%= product.description %> </td>
 				<td> <%= image_tag(product.productImage.url, alt: 'Image') if product.productImage? %> </td>
-				<td> <%= link_to 'Product Page', product_path(product) %> </td>
+				<td> 
+					<%= link_to 'Product Page', product_path(product) %> 
+					<%= link_to 'View Reviews', reviews_index_path(:productId => product.id) %>
+					<%= link_to 'Write Review', reviews_new_path(:id => product.id) %> 
+				</td>
 			</tr>
 		<% end %>
 	</table>
