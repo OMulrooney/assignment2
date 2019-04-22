@@ -22,6 +22,19 @@ class ProfilesController < ApplicationController
     end
   end 
 
+  def edit
+    @profile = Profile.find(params[:id])
+  end
+
+  def update
+    @profile = Profile.find(params[:id])
+    if @profile.update(profile_params)
+      redirect_to profile_path(:id => @profile['userId'])
+    else
+      render 'edit'
+    end
+  end
+
   private
   def profile_params
   	params.require(:profile).permit(:fullName, :dob, :address, :city, :country, :profilePicture, :productImage)

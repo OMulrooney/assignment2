@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'profiles/show'
   get 'profiles/new'
   get 'profiles/create'
+  get 'profiles/edit'
+  get 'profiles/update'
   get 'profile/show'
   get 'profile/new'
   get 'profile/create'

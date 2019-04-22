@@ -1,7 +1,7 @@
 <div class="container">
-	<h1 class="jumbotron-heading">Create A Profile</h1>
+	<h1 class="jumbotron-heading">Edit Your Profile</h1>
 
-	<%= form_for :profile, url: profiles_path do |f| %>
+	<%= form_for @profile do |f| %>
 		<div class="form-group">
 			<%= f.label :fullName %>
 			<%= f.text_field :fullName, class:'form-control'%>
