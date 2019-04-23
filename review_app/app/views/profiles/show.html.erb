@@ -1,11 +1,14 @@
 <div class="container">
 	<h3>Profile Details</h3>
-	<p> <%= link_to "Edit My Profile", edit_profile_path(@profile)%></p>
-	<p> Full Name: <%= @profile.fullName%> </p>
-	<p> Date Of Birth: <%= @profile.dob%> </p>
-	<p> Address: <%= @profile.address%> </p>
-	<p> City: <%= @profile.city%> </p>
-	<p> Country: <%= @profile.country%> </p>
-	<p> Profile Picture: </p>
-	<p class="picture"> <%= image_tag(@profile.profilePicture.url, alt: 'Image') if @profile.profilePicture? %> </p>
+	<div class="profile-container">
+		<p class="picture text-center"> <%= image_tag(@profile.profilePicture.url, alt: 'Image') if @profile.profilePicture? %> </p>
+			<div class="text-center">
+				<p class="text-center"> Full Name: <%= @profile.fullName%> </p>
+				<p> Date Of Birth: <%= @profile.dob%> </p>
+				<p> Address: <%= @profile.address%> </p>
+				<p> City: <%= @profile.city%> </p>
+				<p> Country: <%= @profile.country%> </p>
+			</div>
+		<p class="text-center"> <%= link_to "Edit My Profile", edit_profile_path(@profile)%></p>
+	</div>
 </div>

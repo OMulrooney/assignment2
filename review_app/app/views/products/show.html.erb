@@ -1,10 +1,17 @@
 <div class="container">
 	<h3>Product Details</h3>
-	<p> Product Name: <%= @product.name%> </p>
-	<p> Brand: <%= @product.brand%> </p>
-	<p> Average Price: <%= @product.averageCost%> </p>
-	<p> Category: <%= @product.category%> </p>
-	<p> Release Date: <%= @product.releaseDate%> </p>
-	<p> Description: <%= @product.description%> </p>
-	<p class="picture"> Image <%= image_tag(@product.productImage.url, alt: 'Image') if @product.productImage? %> </p>
+		
+<div class="product-container">
+		<p class="picture text-center"> <%= image_tag(@product.productImage.url, alt: 'Image') if @product.productImage? %> </p>
+			<div class="text-center">
+				<p> Product Name: <%= @product.name%> </p>
+				<p> Brand: <%= @product.brand%> </p>
+				<p> Average Price: <%= @product.averageCost%> </p>
+				<p> Category: <%= @product.category%> </p>
+				<p> Release Date: <%= @product.releaseDate%> </p>
+				<p> Description: <%= @product.description%> </p>
+			</div>
+	</div>
+
+
 </div>

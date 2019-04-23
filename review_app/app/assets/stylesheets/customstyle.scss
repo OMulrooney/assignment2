@@ -2,14 +2,51 @@
 	width: 5rem;
 	height: auto;
 }
-.picture img{
 
+.picture img{
 	width: 75%;
 	height: auto;
 }
 
+.profile-container{
+	width: 75%;
+	border-style: solid;
+	border-width: 2px;
+	border-color: white;
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 10px;
+	span{
+		display: inline-block;
+	}
+}
+
+.product-container{
+	width: 75%;
+	border-style: solid;
+	border-width: 2px;
+	border-color: white;
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 10px;
+	span{
+		display: inline-block;
+	}
+}
+
+
+.row{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
+
 .reviews-table img {
 	width: 5rem;
 	height: auto;
+}
+
+body{
+	background-color: #85A9B7;
 }
 
