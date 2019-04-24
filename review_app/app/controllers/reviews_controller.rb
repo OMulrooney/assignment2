@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+
+  before_action :authorize, :only=> [:create, :new, :edit, :update, :destroy]
+
   def show
   	@review = Review.find(params[:id])
   end
@@ -8,8 +11,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-  	@review = Review.new(reviews_params)
-    puts(@review.productId)
+  	@review = Review.new(review_params)
     @review.datePosted = Time.now
     @reviewProfile = Profile.where('userId = ' + current_user.id.to_s).first
     @review["author"] =  @reviewProfile['fullName']

@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :authorize, :only=> [:create, :new, :edit, :update]
   def show
       profile = Profile.find_by(userID: params[:id])
       if !profile

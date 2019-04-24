@@ -10,7 +10,10 @@
 				<p> Category: <%= @product.category%> </p>
 				<p> Release Date: <%= @product.releaseDate%> </p>
 				<p> Description: <%= @product.description%> </p>
+				<%= link_to 'View Reviews', reviews_index_path(:productId => @product.id) %> | 
+				<%= link_to 'Write Review', reviews_new_path(:id => @product.id) %> 
 			</div>
+			
 	</div>
 
 

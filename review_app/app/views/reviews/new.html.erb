@@ -1,7 +1,7 @@
 <div class="container">
 	<h1 class="jumbotron-heading">Add New Review</h1>
 
-	<%= form_for :reviews, url: reviews_path do |f| %>
+	<%= form_for :review, url: reviews_path do |f| %>
 		<div class="form-group">
 			<%= f.label :rating %>
 			<%= f.select :rating, [[1,1], [2,2], [3,3], [4,4], [5,5]], class:'form-control'%>
